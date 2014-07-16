@@ -13,24 +13,25 @@ var service = server.listen(address, function(request, response) {
   response.close();
 })
 
+var check = function(url, title, fn) {
+  casper.test.begin(title, 1, function suite(test) {
+    casper.start( p(url), function() {
+      fn.call(this, test)
+    })
+    casper.run(function() {
+      test.done()
+    })
+  })
+}
+
 // HELLO
-casper.test.begin('Check the title', 1, function suite(test) {
-  casper.start( p('hello'), function() {
-    test.assertTitle("YO", "Title is the one expected")
-  })
-  casper.run(function() {
-    test.done()
-  })
+check('hello', 'Test the title', function(test) {
+  test.assertTitle("YO", "Title is the one expected")
 })
 
 // H1
-casper.test.begin('Check the h1', 1, function suite(test) {
-  casper.start( p('hello'), function() {
-    casper.waitForSelector('h1', function() {
-      test.assertEqual(this.fetchText('h1'), 'Hello')
-    })
-  })
-  casper.run(function() {
-    test.done()
+check('hello', 'Check the h1', function(test) {
+  casper.waitForSelector('h1', function() {
+    test.assertEqual(this.fetchText('h1'), 'Hello')
   })
 })
