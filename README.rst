@@ -9,8 +9,8 @@ It is still in very early development.
 
 To run tests (using nodejs):
 
-    $ npm install
-    $ ./runtests
+        $ npm install
+        $ ./runtests
 
 You might need to install Phantomjs using brew on OSX: ``brew install phantomjs``
 
