@@ -1,0 +1,9 @@
+{
+  "name": "jquery-galleria",
+  "version": "1.4.2",
+  "description": "******** Galleria ********",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakdoek/galleria.git"
+  }
+}
