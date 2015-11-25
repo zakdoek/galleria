@@ -6905,15 +6905,14 @@ $.fn.galleria = function( options ) {
 };
 
 // export as AMD or CommonJS
-// if ( typeof module === "object" && module && typeof module.exports === "object" ) {
-//     module.exports = Galleria;
-// } else {
-//     window.Galleria = Galleria;
-//     if ( typeof define === "function" && define.amd ) {
-//         define( "galleria", ['jquery'], function() { return Galleria; } );
-//     }
-// }
-window.Galleria = Galleria;
+if ( typeof module === "object" && module && typeof module.exports === "object" ) {
+    module.exports = Galleria;
+} else {
+    window.Galleria = Galleria;
+    if ( typeof define === "function" && define.amd ) {
+        define( "galleria", ['jquery'], function() { return Galleria; } );
+    }
+}
 
 // phew
 
