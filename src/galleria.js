@@ -6916,4 +6916,4 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
 // phew
 
-}( jQuery, this ) );
+}( jQuery, window ) );
